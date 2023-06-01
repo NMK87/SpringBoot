@@ -1,0 +1,3 @@
+INDEX VERSION 1.132
+C:\Users\VISMAI\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\377811590.index
+\exampleSecurity\src\main\java

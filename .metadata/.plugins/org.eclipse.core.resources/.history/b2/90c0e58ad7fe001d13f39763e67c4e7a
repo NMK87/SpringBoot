@@ -1,0 +1,40 @@
+package com.springBoot.jpa;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.springBoot.jpa.dao.UserRepository;
+import com.springBoot.jpa.entites.Users;
+
+@SpringBootApplication
+public class SpringBootJpaProjectApplication {
+
+	public static void main(String[] args) {
+		
+		ConfigurableApplicationContext context= SpringApplication.run(SpringBootJpaProjectApplication.class, args);
+		UserRepository userRepository= context.getBean(UserRepository.class);
+		
+//		Users user = new Users();
+//		user.setName("Neha");
+//		user.setCity("Mandya");
+//		user.setStatus("Currently working on Spring Boot");
+//		
+//		Users user1 = userRepository.save(user);
+//		System.out.println(user1);
+		
+//		Users user = new Users();
+//		user.setName("Neha");
+//		user.setCity("Manglore");
+//		user.setStatus("A java programmer");
+		
+		Users user1 = new Users();
+		user1.setName("Ananya");
+		user1.setCity("Mysore");
+		user1.setStatus("A Python programmer");
+		
+		Users result = userRepository.save(user1);
+		System.out.println(result);
+	}
+
+}

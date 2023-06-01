@@ -1,0 +1,8 @@
+package com.springBoot.jpa.entites;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class users {
+
+}

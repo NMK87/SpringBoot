@@ -1,25 +1,26 @@
 package com.springBoot.jpa.entites;
 
-import org.springframework.data.annotation.Id;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
-//import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="Users")
 public class Users {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column (name = "id")
+	public int id;
 	
-	private String name;
+	@Column
+	public String name;
 	
-	private String city;
+	@Column
+	public String city;
 	
 	@Override
 	public String toString() {
@@ -71,5 +72,8 @@ public class Users {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
+	}	
+	
+
+
 }
