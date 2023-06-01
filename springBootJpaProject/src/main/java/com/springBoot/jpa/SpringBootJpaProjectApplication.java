@@ -29,28 +29,32 @@ public class SpringBootJpaProjectApplication {
 //		
 //		Users user1 = userRepository.save(user);
 //		System.out.println(user1);
-//		
-//		Users user2 = new Users();
-//		user2.setName("Neha");
-//		user2.setCity("Manglore");
-//		user2.setStatus("A java programmer");
-//		
-//		Users user1 = new Users();
-//		user1.setName("Ananya");
-//		user1.setCity("Mysore");
-//		user1.setStatus("A Python programmer");
+		
+		Users user2 = new Users();
+		user2.setName("Neha");
+		user2.setCity("Manglore");
+		user2.setStatus("A java programmer");
+		
+		Users user1 = new Users();
+		user1.setName("Ananya");
+		user1.setCity("Mysore");
+		user1.setStatus("A Python programmer");
+		
+		Users user3 = new Users();
+		user3.setName("Aman");
+		user3.setCity("Pune");
+		user3.setStatus("A Frontend developer");
 		
 //		Users result = userRepository.save(user1);
 		
-//		List<Users> result =List.of(user1,user2);
+		List<Users> result =List.of(user1,user2,user3);
 		//here we are saving multiple objects by using saveAll. And traversing it by using Iterable.
-//		Iterable<Users> resultIterator = userRepository.saveAll(result);
-//		
-//		resultIterator.forEach(users ->{
-//			System.out.println(resultIterator);
-//		});
-//		
-//		System.out.println(result);
+		Iterable<Users> resultIterator = userRepository.saveAll(result);
+			resultIterator.forEach(users ->{
+				System.out.println(resultIterator);
+		});
+	
+//			System.out.println(result);
 		
 //		Update value of Neha with id 4
 		
@@ -92,8 +96,11 @@ public class SpringBootJpaProjectApplication {
 //		userRepository.deleteById(1);
 //		System.out.println("deleted");
 		
-		Iterable<Users> allusers = userRepository.findAll();
-		userRepository.deleteAll(allusers);
+//		Iterable<Users> allusers = userRepository.findAll();
+//		userRepository.deleteAll(allusers);
+			
+			List<Users> findname= userRepository.findByName("neha");
+			findname.forEach(e->System.out.println(e));
 	}
 
 }
